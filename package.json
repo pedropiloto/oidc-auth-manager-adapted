@@ -1,6 +1,6 @@
 {
-  "name": "@solid/oidc-auth-manager",
-  "version": "0.18.2",
+  "name": "oidc-auth-manager-adapted",
+  "version": "0.19.0",
   "description": "An OpenID Connect (OIDC) authentication manager (OP, RP and RS) for decentralized peer-to-peer authentication",
   "main": "./src/index.js",
   "scripts": {
@@ -10,35 +10,17 @@
     "preversion": "npm test",
     "postversion": "git push --follow-tags"
   },
-  "engines": {
-    "node": ">=8.10"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/solid/oidc-auth-manager"
-  },
-  "keywords": [
-    "solid",
-    "decentralized",
-    "web",
-    "oidc",
-    "openid",
-    "connect",
-    "authentication",
-    "linked",
-    "data"
-  ],
-  "author": {
-    "name": "Dmitri Zagidulin",
-    "url": "https://github.com/dmitrizagidulin/"
+    "url": "https://github.com/pedropiloto/oidc-auth-manager-adapted"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/solid/oidc-auth-manager/issues"
+    "url": "https://github.com/pedropiloto/oidc-auth-manager-adapted/issues"
   },
-  "homepage": "https://github.com/solid/oidc-auth-manager",
+  "homepage": "https://github.com/pedropiloto/oidc-auth-manager-adapted",
   "dependencies": {
-    "@solid/oidc-op": "^0.5.0",
+    "oidc-op-adapted": "^0.6.0",
     "@solid/oidc-rs": "^0.3.2",
     "@solid/solid-multi-rp-client": "^0.4.3",
     "ajv": "^5.5.2",

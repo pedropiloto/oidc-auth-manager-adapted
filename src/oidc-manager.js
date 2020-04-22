@@ -7,7 +7,7 @@ const validUrl = require('valid-url')
 const ResourceAuthenticator = require('@solid/oidc-rs')
 const KVPFileStore = require('kvplus-files')
 const MultiRpClient = require('@solid/solid-multi-rp-client')
-const OIDCProvider = require('@solid/oidc-op')
+const OIDCProvider = require('oidc-op-adapted')
 const UserStore = require('./user-store')
 
 const HostAPI = require('./host-api')
@@ -51,6 +51,7 @@ class OidcManager {
 
     this.providerUri = options.serverUri
     this.serverUri = options.serverUri
+    this.gatewayUri = options.gatewayUri
     this.host = options.host
 
     this.authCallbackUri = options.authCallbackUri
@@ -100,6 +101,7 @@ class OidcManager {
       debug: config.debug,
       providerUri: config.serverUri || config.providerUri,
       serverUri: config.serverUri || config.providerUri,
+      gatewayUri: config.gatewayUri,
       host: config.host,
       authCallbackUri: config.authCallbackUri,
       postLogoutUri: config.postLogoutUri,
@@ -321,6 +323,7 @@ class OidcManager {
     } else {
       providerConfig.issuer = this.providerUri
       providerConfig.serverUri = this.serverUri
+      providerConfig.gateway = this.gatewayUri
     }
 
     return providerConfig
