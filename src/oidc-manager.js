@@ -464,6 +464,8 @@ class OidcManager {
    * @returns {boolean}
    */
   static domainMatches (issuer, webId) {
+    console.log("domain matching:", issuer, webId)
+
     let match
 
     try {
